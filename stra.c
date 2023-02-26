@@ -1,6 +1,5 @@
 #include <stddef.h>
 
-//get length implementation
 size_t Str_getLength(const char pcSrc[])
 {
    size_t uLength = 0;
@@ -10,12 +9,17 @@ size_t Str_getLength(const char pcSrc[])
    return uLength;
 }
 
-size_t Str_copy(const char pcSrc[])
+char* Str_copy(char dest[], const char pcSrc[])
 {
-
+    int i = 0;
+    while(pcSrc[i] != '\0'){
+        dest[i] = pcSrc[i];
+    }
+    dest[i] = '\0';
+    return dest;
 }
 
-size_t Str_concat(const char pcSrc[])
+size_t Str_concat(char dest[], const char pcSrc[])
 {
 
 }
