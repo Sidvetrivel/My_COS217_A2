@@ -39,5 +39,8 @@ char* Str_concat(char dest[], const char pcSrc[])
     return dest;
 }
 
+int main(){
+    return 0;
+}
 
 
