@@ -10,7 +10,7 @@ size_t Str_getLength(const char pcSrc[])
    return uLength;
 }
 
-int* Str_copy(char dest[], const char pcSrc[])
+char* Str_copy(char dest[], const char pcSrc[])
 {
     int i = 0;
     assert(pcSrc != NULL && dest != NULL);
@@ -21,7 +21,7 @@ int* Str_copy(char dest[], const char pcSrc[])
     return dest;
 }
 
-int* Str_concat(char dest[], const char pcSrc[])
+char* Str_concat(char dest[], const char pcSrc[])
 {
     int i = 0;
     int j = 0;
