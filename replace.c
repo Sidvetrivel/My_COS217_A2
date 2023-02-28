@@ -57,7 +57,6 @@ int main(int argc, char *argv[])
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
       /* Insert your code here. */
-
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
 }

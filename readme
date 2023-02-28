@@ -3,7 +3,7 @@ Assignment 2 readme File
 ------------------------------------------------------------------------
 What is your name?
 
-
+Siddharth Vetrivel
 
 ------------------------------------------------------------------------
 What authorized sources of information did you use to complete the
@@ -93,6 +93,7 @@ Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-
+No it is not possible because there are certain cases where it could 
+produce memory errors.
 
 ------------------------------------------------------------------------

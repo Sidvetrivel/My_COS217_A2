@@ -49,7 +49,7 @@ int Str_compare(const char str1[], const char pcSrc[])
     return (str1[i] - pcSrc[i]);
 }
 
-char* Str_search(const char str1[], const char pcSrc[])
+char* Str_search(char str1[], const char pcSrc[])
 {
     int i = 0;
     int j = 0;
