@@ -63,7 +63,3 @@ char* Str_search(const char* str1, const char* str2)
     }
     return NULL;
 }
-
-int main(){
-    return 0;
-}
