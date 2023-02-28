@@ -1,3 +1,4 @@
+#include <stddef.h>
 #ifndef STRA_INCLUDED
 #define STRA_INCLUDED
 
