@@ -49,6 +49,22 @@ int Str_compare(const char str1[], const char str2[])
     return (str1[i] - str2[i]);
 }
 
+char* Str_search(const char str1[], const char str2[])
+{
+    int i = 0;
+    int j = 0;
+    assert(str2 != NULL && str1 != NULL);
+    for (i = 0; str1[i]; i++) {
+        for (j = 0; str2[j]; j++) {
+            if (str1[i+j] != str2[j])
+                break;
+        }
+        if (!str2[j])
+            return &str1[i];
+    }
+    return NULL;
+}
+
 int main(){
     return 0;
 }
