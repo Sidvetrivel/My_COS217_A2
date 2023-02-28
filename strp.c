@@ -43,7 +43,7 @@ int Str_compare(const char* str1, const char* str2)
     return (*(char*)str1)-(*(char*)str2);
 }
 
-char* Str_search(const char* str1, const char* str2)
+char* Str_search(char* str1, char* str2)
 {
     char* i = str1;
     char* j = str2;
