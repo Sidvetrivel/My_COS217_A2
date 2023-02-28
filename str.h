@@ -1,8 +1,6 @@
 #ifndef STRA_INCLUDED
 #define STRA_INCLUDED
 
-#include <stddef.h>
-
 /*getLength*/
 size_t Str_getLength(const char pcSrc[]);
 
