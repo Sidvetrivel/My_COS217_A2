@@ -14,6 +14,6 @@ char* Str_concat(char dest[], const char pcSrc[]);
 int Str_compare(const char str1[], const char pcSrc[]);
 
 //search
-char* Str_search(char str1[], const char pcSrc[]);
+char* Str_search(const char str1[], const char pcSrc[]);
 
 #endif
