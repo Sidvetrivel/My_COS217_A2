@@ -49,7 +49,7 @@ char* Str_search(const char* str1, const char* str2)
     char* j = str2;
     assert(str1 != NULL && str2 != NULL);
     if(*str2 == '\0'){
-        return str1;
+        return (char*)str1;
     }
     while(*str1 == '\0'){
         while((*i == *j) && (*j != '\0')){
@@ -57,7 +57,7 @@ char* Str_search(const char* str1, const char* str2)
             j++;
         }
         if(*j == '\0'){
-            return str1;
+            return (char*)str1;
         }
         str1++;
     }
