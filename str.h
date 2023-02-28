@@ -1,19 +1,19 @@
 #ifndef STRA_INCLUDED
 #define STRA_INCLUDED
 
-//getLength
+/*getLength*/
 size_t Str_getLength(const char pcSrc[]);
 
-//copy
+/*copy*/
 char* Str_copy(char dest[], const char pcSrc[]);
 
-//concat
+/*concat*/
 char* Str_concat(char dest[], const char pcSrc[]);
 
-//compare
+/*compare*/
 int Str_compare(const char str1[], const char pcSrc[]);
 
-//search
+/*search*/
 char* Str_search(const char str1[], const char pcSrc[]);
 
 #endif
