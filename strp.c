@@ -29,33 +29,37 @@ char* Str_concat(char* dest, const char* pcSrc)
     while(*dest != '\0'){
         *dest++ = *pcSrc++;
     }
-    
     *concat = '\0';
     return dest;
 }
 
-int Str_compare(const char str1[], const char str2[])
+int Str_compare(const char* str1, const char* str2)
 {
-    int i = 0;
-    assert(str2 != NULL && str1 != NULL);
-    while (str1[i] && (str1[i] == str2[i])) {
-        i++;
+    assert(str1 != NULL && str2 != NULL);
+    while (*str1 && (*str1 == *str2)) {
+        str1++;
+        str2++;
     }
-    return (str1[i] - str2[i]);
+    return (*(char*)str1)-(*(char*)str2);
 }
 
-char* Str_search(const char str1[], const char str2[])
+char* Str_search(const char* str1, const char* str2)
 {
-    int i = 0;
-    int j = 0;
-    assert(str2 != NULL && str1 != NULL);
-    for (i = 0; str1[i]; i++) {
-        for (j = 0; str2[j]; j++) {
-            if (str1[i+j] != str2[j])
-                break;
+    char* i = str1;
+    char* j = str2;
+    assert(str1 != NULL && str2 != NULL);
+    if(*str2 == '\0'){
+        return str1;
+    }
+    while(*str1 == '\0'){
+        while((*i == *j) && (*j != '\0')){
+            i++;
+            j++;
         }
-        if (!str2[j])
-            return &str1[i];
+        if(*j == '\0'){
+            return str1;
+        }
+        str1++;
     }
     return NULL;
 }
