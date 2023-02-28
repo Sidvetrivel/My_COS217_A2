@@ -39,6 +39,16 @@ char* Str_concat(char dest[], const char pcSrc[])
     return dest;
 }
 
+int Str_compare(const char str1[], const char str2[])
+{
+    int i = 0;
+    assert(str2 != NULL && str1 != NULL);
+    while (str1[i] && (str1[i] == str2[i])) {
+        i++;
+    }
+    return (str1[i] - str2[i]);
+}
+
 int main(){
     return 0;
 }
