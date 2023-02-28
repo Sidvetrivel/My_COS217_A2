@@ -60,7 +60,7 @@ char* Str_search(const char str1[], const char pcSrc[])
                 break;
         }
         if (!pcSrc[j])
-            return &str1[i];
+            return str1[i];
     }
     return NULL;
 }
