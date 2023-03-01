@@ -46,9 +46,9 @@ int Str_compare(const char* str1, const char* str2)
 
 char* Str_search(const char* str1, const char* str2)
 {     
-    char* i = (char*)str1;
-    char* j = (char*)str2;
-    char* match_start = NULL;
+    const char* i = (char*)str1;
+    const char* j = (char*)str2;
+    const char* match_start = NULL;
      if (*str1 == '\0' || *str2 == '\0') {
         return NULL;
     }
