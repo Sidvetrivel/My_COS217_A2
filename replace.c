@@ -80,6 +80,11 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
+   /* this while loop takes a line from stdin as long as it's null
+   and calls replaceAndWrite. It then adds the return value of 
+   replaceAndWrite to the total replacement count variable 
+   (uReplaceCount) and outputs this value to stderr when exiting the 
+   loop */
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
       uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
