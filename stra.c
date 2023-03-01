@@ -56,7 +56,7 @@ char* Str_search(const char str1[], const char pcSrc[])
     int i = 0;
     int j = 0;
     assert(pcSrc != NULL && str1 != NULL);
-    if (str1 == NULL || pcSrc == NULL) {
+    if (str1 == '\0' || pcSrc == '\0') {
         return NULL;
     }
     for (i = 0; str1[i]; i++) {
