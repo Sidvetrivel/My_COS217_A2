@@ -2,7 +2,7 @@
 #ifndef STRA_INCLUDED
 #define STRA_INCLUDED
 
-/*getLength takes in pcSrc and outputs the length as a size_t*/
+/*getLength takes in pcSrc and returns the length as a size_t*/
 size_t Str_getLength(const char pcSrc[]);
 
 /*copy takes in both a dest buffer and pcSrc and returns the pointer
