@@ -23,7 +23,7 @@ static size_t replaceAndWrite(const char *pcLine,
    size_t replaceCount = 0;
    char* s; 
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
-   s = Str_search(pcLine,pcFrom);
+   s = strstr(pcLine,pcFrom);
    if(*pcFrom == '\0'){
          while(*pcLine == '\0'){
             putchar(*pcLine);
