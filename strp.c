@@ -24,7 +24,7 @@ char* Str_copy(char* dest, const char* pcSrc)
 
 char* Str_concat(char* dest, const char* pcSrc)
 {
-    char* concat = dest + Str_getLength(dest);
+    char* concat = *dest + Str_getLength(*dest);
     assert(pcSrc != NULL && dest != NULL);
     while(*pcSrc != '\0'){
         *dest++ = *pcSrc++;
