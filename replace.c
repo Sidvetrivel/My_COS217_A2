@@ -21,33 +21,28 @@ static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
    size_t replaceCount = 0;
-   char* s = Str_search(pcFrom,pcLine);
-   char* i = 0;
+   char* s; 
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
+   s = Str_search(pcLine,pcFrom);
    if(*pcFrom == '\0'){
          while(*pcLine == '\0'){
-            putchar(&pcLine);
+            putchar(*pcLine);
             pcLine++;
          }
          return 0;
    } 
    else{
       while(s != NULL){
-         while(i != s){
-            putchar(pcLine);
-            i++;
+         while(pcLine != s){
+            putchar(*pcLine);
+            pcLine++;
          }
-         while(pcTo = '\0'){
-            putchar(*pcTo);
-            pcTo++;
-         }
-         i = i + Str_getLength(pcTo);
-         s = Str_search(pcFrom,pcLine);
+         printf("%s", pcTo);
+         pcLine = pcLine + Str_getLength(pcFrom);
+         s = Str_search(pcLine,pcFrom);
          replaceCount++;
       }
-      while(i != '\0'){
-         putchar(pcLine);
-      }
+      printf("%s", pcLine);
    }
    return replaceCount;
 }
@@ -85,7 +80,7 @@ int main(int argc, char *argv[])
    pcTo = argv[2];
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
 }
