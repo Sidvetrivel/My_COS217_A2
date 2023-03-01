@@ -62,7 +62,7 @@ char* Str_search(const char* str1, const char* str2)
         if(*j == '\0'){
             return (char*)str1;
         }
-        i++;
+        str1++;
     }
     return NULL;
 }
