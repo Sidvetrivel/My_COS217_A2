@@ -23,6 +23,7 @@ char* Str_copy(char dest[], const char pcSrc[])
     return dest;
 }
 
+
 char* Str_concat(char dest[], const char pcSrc[])
 {
     int i = 0;
