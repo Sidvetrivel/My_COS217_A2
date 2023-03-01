@@ -56,16 +56,17 @@ char* Str_search(const char str1[], const char pcSrc[])
     int i = 0;
     int j = 0;
     assert(pcSrc != NULL && str1 != NULL);
-    if (str1[i] == '\0' || pcSrc[j] == '\0') {
+    if (str1[0] == '\0' || pcSrc[0] == '\0') {
         return NULL;
     }
-    for (i = 0; str1[i]; i++) {
-        for (j = 0; pcSrc[j]; j++) {
+    for (i = 0; str1[i] != '\0'; i++) {
+        for (j = 0; pcSrc[j] != '\0'; j++) {
             if (str1[i+j] != pcSrc[j])
                 break;
         }
-        if (!pcSrc[j])
+        if (pcSrc[j] == '\0'){
             return (char*)(&str1[i]);
+        }
     }
     return NULL;
 }
