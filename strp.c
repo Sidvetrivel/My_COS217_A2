@@ -56,13 +56,12 @@ char* Str_search(const char* str1, const char* str2)
     }
     while(*str1 != '\0'){
         while(*i == *j && *j != '\0'){
-            i++;
             j++;
         }
         if(*j == '\0'){
             return (char*)str1;
         }
-        str1++;
+        i++;
     }
     return NULL;
 }
