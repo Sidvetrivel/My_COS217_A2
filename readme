@@ -90,7 +90,17 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
+Using splint, my code generated one warning:
 
+strp.c: (in function Str_compare)
+strp.c:45:12: Return value type char does not match declared type int:
+                 (*(char *)str1) - (*(char *)str2)
+  To make char and int types equivalent, use +charint.
+
+The suggestion made by splint is uneccessary in this case because the
+return type char gets automatically casted to an int when returned and
+the functionality of the code doesn't get affected by this so it is
+uneccessary to change this.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on strp.c, and what are your
@@ -106,7 +116,11 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
+for replace.c, splint outputted these similar warnings:
 
+These warnings can be ignored because these functions are definied 
+in the source files which is linked through the str.h file so it doesn't
+need to be defined in any other place besides the source file itself.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on replace.c, and what are your
@@ -114,17 +128,31 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
+I had one warning on replace.c:
+str.h:6:8: Function Str_getLength declared but not defined
+str.h:10:7: Function Str_copy declared but not defined
+str.h:14:7: Function Str_concat declared but not defined
+str.h:18:5: Function Str_compare declared but not defined
+str.h:23:7: Function Str_search declared but not defined
 
+Checking replace.c
+
+   str.h: line 1: high priority: 
+   A file should begin with a comment.
+
+This seems uneccessary as not every file needs to have the first line 
+be a comment even though I agree that it certainly doesnt hurt to have
+a comment in the first line.
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-No it is not possible because there are certain cases where it could 
-produce memory errors. This can happen when we don't know the 
+No it is not possible because we don't know the 
 size of the desitnation buffer for both functions at compile time and
 using the assert statement would not be an way appropriate to validate 
 if there is enough space because the statement would execute at 
-runtime. 
+runtime. This means that we can't actually use assert to find if we have
+enough destination memory at compile time which is what we want.
 ------------------------------------------------------------------------
