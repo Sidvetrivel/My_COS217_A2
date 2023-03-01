@@ -1,3 +1,4 @@
+/* array implemenetation of string.h functions */
 #include <stddef.h>
 #include <assert.h>
 
