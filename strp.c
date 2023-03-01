@@ -28,7 +28,6 @@ char* Str_concat(char* dest, const char* pcSrc)
     assert(pcSrc != NULL && dest != NULL);
     while(*pcSrc != '\0'){
         *dest++ = *pcSrc++;
-        concat++;
     }
     *concat = '\0';
     return dest;
