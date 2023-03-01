@@ -46,12 +46,11 @@ int Str_compare(const char* str1, const char* str2)
 
 char* Str_search(const char* str1, const char* str2)
 {
-    /*
     char* i;
     char* j;
     assert(str1 != NULL && str2 != NULL);
-    i = (char*)str1;
-    j = (char*)str2;
+    i = &str1;
+    j = &str2;
     if(*str2 == '\0'){
         return (char*)str1;
     }
@@ -61,23 +60,6 @@ char* Str_search(const char* str1, const char* str2)
             j++;
         }
         if(*j == '\0'){
-            return (char*)str1;
-        }
-        str1++;
-    }
-    return NULL;
-    */
-    if (str1 == NULL || str2 == NULL || *str2 == '\0') {
-        return NULL;
-    }
-    while (*str1 != '\0') {
-        const char* p1 = str1;
-        const char* p2 = str2;
-        while (*p1 == *p2 && *p2 != '\0') {
-            p1++;
-            p2++;
-        }
-        if (*p2 == '\0') {
             return (char*)str1;
         }
         str1++;
