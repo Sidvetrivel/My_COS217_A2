@@ -18,6 +18,11 @@
    assumptions about the maximum number of replacements or the
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
+/* replaceAndWrite takes in 3 parameters of const char pointers
+of pcLine, pcFrom, and pcTo. The function replaces each occurence of 
+pcFrom within pcLine and replaces occurences of pcFrom with pcTo. After
+printing out the string with replacements to std.out, the function
+returns the number of replacements made as a size_t type */
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
