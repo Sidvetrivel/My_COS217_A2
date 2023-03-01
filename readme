@@ -154,5 +154,5 @@ size of the desitnation buffer for both functions at compile time and
 using the assert statement would not be an way appropriate to validate 
 if there is enough space because the statement would execute at 
 runtime. This means that we can't actually use assert to find if we have
-enough destination memory at compile time which is what we want.
+enough destination memory at compile time.
 ------------------------------------------------------------------------
