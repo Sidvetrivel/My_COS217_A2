@@ -53,6 +53,9 @@ int Str_compare(const char str1[], const char pcSrc[])
 
 char* Str_search(const char str1[], const char pcSrc[])
 {
+    if (str1 == NULL || pcSrc == NULL) {
+        return NULL;
+    }
     int i = 0;
     int j = 0;
     assert(pcSrc != NULL && str1 != NULL);
