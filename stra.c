@@ -53,19 +53,6 @@ int Str_compare(const char str1[], const char pcSrc[])
 
 char* Str_search(const char str1[], const char pcSrc[])
 {
-   /* 
-   int i, j, k;
-    if (pcSrc[0] == '\0') {
-        return (char*)str1;
-    }
-    for (i = 0; str1[i] != '\0'; i++) {
-        for (j = i, k = 0; str1[j] == pcSrc[k] && pcSrc[k] != '\0'; j++, k++);
-        if (pcSrc[k] == '\0') {
-            return (char*)&str1[i];
-        }
-    }
-    return NULL;
-    */
     int i = 0;
     int j = 0;
     assert(pcSrc != NULL && str1 != NULL);
