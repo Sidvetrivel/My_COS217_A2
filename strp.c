@@ -98,9 +98,9 @@ char* Str_search(const char* str1, const char* str2)
     }
     return NULL;
     */
-    char* p1 = str1;
+    char* p1 = (char*)str1;
     char* p1Begin = p1;
-    char* p2 = str2;
+    char* p2 = (char*)str2;
     if (*str2 == '\0') {
         return (char*)str1;
     }
