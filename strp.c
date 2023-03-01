@@ -66,9 +66,11 @@ char* Str_search(const char* str1, const char* str2)
     }
     return NULL;
     */
-    const char* p1 = str1;
-    const char* p2 = str2;
-    const char* p3 = str1;
+
+    /*
+    char* p1 = str1;
+    char* p2 = str2;
+    char* p3 = str1;
     
     while (*p1 != '\0' && *p2 != '\0') {
         if (*p1 == *p2) {
@@ -76,7 +78,8 @@ char* Str_search(const char* str1, const char* str2)
                 p3 = p1;
             }
             p2++;
-        } else {
+        } 
+        else {
             p2 = str2;
             if (p3 != str1) {
                 p1 = p3 + 1;
@@ -94,4 +97,35 @@ char* Str_search(const char* str1, const char* str2)
         return (char*)(p3);
     }
     return NULL;
+    */
+    if (*str2 == '\0') {
+        // Special case: empty string is always found
+        return (char*)str1;
+    }
+
+    const char* p1 = str1;
+    while (*p1 != '\0') {
+        const char* p1Begin = p1;
+        const char* p2 = str2;
+
+        while (*p1 != '\0' && *p2 != '\0' && *p1 == *p2) {
+            p1++;
+            p2++;
+        }
+
+        if (*p2 == '\0') {
+            // Found
+            return (char*)p1Begin;
+        }
+
+        if (*p1 == '\0') {
+            // Not found
+            return NULL;
+        }
+
+        p1 = p1Begin + 1;
+    }
+
+    return NULL;
+    
 }
