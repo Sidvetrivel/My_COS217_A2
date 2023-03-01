@@ -44,13 +44,13 @@ int Str_compare(const char* str1, const char* str2)
     return (*(char*)str1)-(*(char*)str2);
 }
 
-char* Str_search(char* str1, char* str2)
+char* Str_search(const char* str1, const char* str2)
 {
-    char* i;
+    /*char* i;
     char* j;
     assert(str1 != NULL && str2 != NULL);
-    i = str1;
-    j = str2;
+    i = (char*)str1;
+    j = (char*)str2;
     if(*str2 == '\0'){
         return (char*)str1;
     }
@@ -63,6 +63,35 @@ char* Str_search(char* str1, char* str2)
             return (char*)str1;
         }
         str1++;
+    }
+    return NULL;
+    */
+    const char* p1 = str1;
+    const char* p2 = str2;
+    const char* p3 = str1;
+    
+    while (*p1 != '\0' && *p2 != '\0') {
+        if (*p1 == *p2) {
+            if (p3 == str1) {
+                p3 = p1;
+            }
+            p2++;
+        } else {
+            p2 = str2;
+            if (p3 != str1) {
+                p1 = p3 + 1;
+                p3 = str1;
+            }
+            if (*p1 == *p2) {
+                p3 = p1;
+                p2++;
+            }
+        }
+        p1++;
+    }
+    
+    if (*p2 == '\0') {
+        return (char*)(p3);
     }
     return NULL;
 }
