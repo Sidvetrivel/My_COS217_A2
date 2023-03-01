@@ -62,7 +62,7 @@ char* Str_search(const char* str1, const char* str2)
                 return (char*)match_start;
             }
         } else {
-            j = str2;
+            j = (char*)str2;
             if (match_start != NULL) {
                 i = match_start + 1;
                 match_start = NULL;
