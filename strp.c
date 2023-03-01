@@ -49,8 +49,8 @@ char* Str_search(const char* str1, const char* str2)
     char* i;
     char* j;
     assert(str1 != NULL && str2 != NULL);
-    i = &str1;
-    j = &str2;
+    i = *str1;
+    j = *str2;
     if(*str2 == '\0'){
         return (char*)str1;
     }
