@@ -45,82 +45,29 @@ int Str_compare(const char* str1, const char* str2)
 }
 
 char* Str_search(const char* str1, const char* str2)
-{
-    /*char* i;
+{     
+    char* i;
+    char* strStart;
     char* j;
     assert(str1 != NULL && str2 != NULL);
     i = (char*)str1;
+    strStart = i;
     j = (char*)str2;
-    if(*str2 == '\0'){
-        return (char*)str1;
-    }
-    while(*str1 != '\0'){
-        while(*i == *j && *j != '\0'){
-            j++;
-            i++;
-        }
-        if(*j == '\0'){
-            return (char*)str1;
-        }
-        str1++;
-    }
-    return NULL;
-    */
-
-    /*
-    char* p1 = str1;
-    char* p2 = str2;
-    char* p3 = str1;
-    
-    while (*p1 != '\0' && *p2 != '\0') {
-        if (*p1 == *p2) {
-            if (p3 == str1) {
-                p3 = p1;
-            }
-            p2++;
-        } 
-        else {
-            p2 = str2;
-            if (p3 != str1) {
-                p1 = p3 + 1;
-                p3 = str1;
-            }
-            if (*p1 == *p2) {
-                p3 = p1;
-                p2++;
-            }
-        }
-        p1++;
-    }
-    
-    if (*p2 == '\0') {
-        return (char*)(p3);
-    }
-    return NULL;
-    */
-    char* p1 = (char*)str1;
-    char* p1Begin = p1;
-    char* p2 = (char*)str2;
     if (*str2 == '\0') {
         return (char*)str1;
     }
-    while (*p1 != '\0') {
-        while (*p1 != '\0' && *p2 != '\0' && *p1 == *p2) {
-            p1++;
-            p2++;
+    while (*i != '\0') {
+        while (*i != '\0' && *j != '\0' && *i == *j) {
+            i++;
+            j++;
         }
-
-        if (*p2 == '\0') {
-            return (char*)p1Begin;
+        if (*j == '\0') {
+            return (char*)strStart;
         }
-
-        if (*p1 == '\0') {
+        if (*i == '\0') {
             return NULL;
         }
-
-        p1 = p1Begin + 1;
+        i = strStart++;
     }
-
     return NULL;
-    
 }
