@@ -17,6 +17,7 @@ char* Str_copy(char dest[], const char pcSrc[])
     assert(pcSrc != NULL && dest != NULL);
     while(pcSrc[i] != '\0'){
         dest[i] = pcSrc[i];
+        i++;
     }
     dest[i] = '\0';
     return dest;
