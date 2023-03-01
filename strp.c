@@ -24,10 +24,11 @@ char* Str_copy(char* dest, const char* pcSrc)
 
 char* Str_concat(char* dest, const char* pcSrc)
 {
-    char* concat = dest + Str_getLength(dest);
+    char* concat;
     assert(pcSrc != NULL && dest != NULL);
+    concat = dest + Str_getLength(dest);
     while(*pcSrc != '\0'){
-        *dest++ = *pcSrc++;
+        *concat++ = *pcSrc++;
     }
     *concat = '\0';
     return dest;
